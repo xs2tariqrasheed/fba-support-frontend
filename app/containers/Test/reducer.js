@@ -1,6 +1,6 @@
 /*
  *
- * {{ properCase name }} reducer
+ * Test reducer
  *
  */
 
@@ -10,7 +10,7 @@ import { DEFAULT_ACTION } from './constants';
 export const initialState = {};
 
 /* eslint-disable default-case, no-param-reassign */
-const {{ camelCase name }}Reducer = (state = initialState, action) =>
+const testReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
       case DEFAULT_ACTION:
@@ -20,4 +20,4 @@ const {{ camelCase name }}Reducer = (state = initialState, action) =>
     }
   });
 
-export default {{ camelCase name }}Reducer;
+export default testReducer;
