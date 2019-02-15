@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { DatePicker } from 'antd';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -27,6 +28,9 @@ export class Test extends React.Component {
   render() {
     return (
       <div align="center">
+        <br />
+        <DatePicker />
+        <br />
         <h2>Test Redux Form</h2>
         <ContactForm onSubmit={this.submit} />
       </div>

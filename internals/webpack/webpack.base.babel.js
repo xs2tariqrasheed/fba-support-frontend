@@ -48,6 +48,28 @@ module.exports = options => ({
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader', // translates CSS into CommonJS
+          },
+          {
+            loader: 'less-loader', // compiles Less to CSS
+            options: {
+              javascriptEnabled: true,
+              modifyVars: {
+                'primary-color': '#1DA57A',
+                'link-color': '#1DA57A',
+                'border-radius-base': '2px',
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.(eot|otf|ttf|woff|woff2)$/,
         use: 'file-loader',
       },
@@ -124,8 +146,11 @@ module.exports = options => ({
     }),
   ]),
   resolve: {
+    alias: {
+      moment$: path.resolve(process.cwd(), 'node_modules/moment/moment.js'),
+    },
     modules: ['node_modules', 'app'],
-    extensions: ['.js', '.jsx', '.react.js'],
+    extensions: ['.js', '.jsx', '.react.js', '.less'],
     mainFields: ['browser', 'jsnext:main', 'main'],
   },
   devtool: options.devtool,

@@ -9,8 +9,10 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Test from '../Test/Loadable';
 
-import Test from 'containers/Test/Loadable';
+// import loadable from '@loadable/component';
+// const Test = loadable(() => import('containers/Test'));
 
 export default function App() {
   return (
