@@ -147,6 +147,11 @@ module.exports = options => ({
   ]),
   resolve: {
     alias: {
+      // moment: `moment/moment.js`,
+      '@ant-design/icons/lib/dist$': path.resolve(
+        __dirname,
+        '../../app/icons.js',
+      ),
       moment$: path.resolve(process.cwd(), 'node_modules/moment/moment.js'),
     },
     modules: ['node_modules', 'app'],
